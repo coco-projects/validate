@@ -105,6 +105,8 @@
                 throw new \Exception('未定义的场景: ' . $this->scene);
             }
 
+            $this->errorMsg = [];
+
             foreach ($this->rule[$this->scene] as $field => $rules) {
                 $value     = $this->data[$field] ?? '';
                 $isRequire = isset($rules['require']);
